@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <nav class="navbar bg-body-tertiary fixed-top">
+  <nav class="navbar bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-around">
       <a class="navbar-brand" href="#"><h2><b>BiletAl.com</b></h2></a>
       <div class="menu">
@@ -39,14 +39,21 @@
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <b>Giriş Yap</b>
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <b> Giriş Yap</b>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Seyahatlerim</b></a>
+              <a class="nav-link" href="#">
+                <i class="fa fa-car" aria-hidden="true"></i>
+                <b> Seyahatlerim</b>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>Yardım</b></a>
+              <a class="nav-link" href="#">
+                <i class="fa fa-question" aria-hidden="true"></i>
+                <b> Yardım</b>
+              </a>
             </li>
           </ul>
         </div>
