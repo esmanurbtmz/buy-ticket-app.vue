@@ -8,7 +8,9 @@ import cityComponent from "./cityComponent.vue";
     <app-header></app-header>
     <div class="main container-fluid mt-5">
       <div class="row flex-wrap d-flex justify-content-center align-items-center">
-        <div class="col-lg-5">deneme</div>
+        <div class="col-lg-4">
+          <city-component></city-component>
+        </div>
         <div class=" col-lg-6 b-container">
           <h3 class="text-center pt-4">Türkiye'nin En Büyük Otobüs Bileti Sitesi</h3>
           <div class="row  justify-content-around">
@@ -70,6 +72,9 @@ import cityComponent from "./cityComponent.vue";
 @media screen and (max-width: 1438px) {
   .b-container {
     display: none;
+  }
+  .main{
+    background-image: none;
   }
 }
 </style>
