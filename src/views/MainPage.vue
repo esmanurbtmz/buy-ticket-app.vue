@@ -42,6 +42,26 @@ import cityComponent from "./cityComponent.vue";
         </div>
       </div>
     </div>
+    <h3 class="text-center">Otobüs Bileti Kampanyaları</h3>
+    <div class="d-flex justify-content-evenly">
+      <div class="col-lg-3 col-6 t-company text-center">
+        <img src="../../medias/images/146-md.png" alt="">
+        <h4 class=" pt-3">CardFinans'tan ParaPuan ve Taksit Kampanyası</h4>
+        <a href="">CardFinans bireysel kredi kartlarınızla yapacağınız 500 TL ve üzeri alışverişinize 5...</a>
+      </div>
+      <div class="col-lg-3 col-6 t-company">
+        <img src="../../medias/images/148-md.png" alt="">
+        <h4 class=" pt-3">HSBC Puan ve Taksit Kampanyası</h4>
+        <a href="">HSBC bireysel kredi kartlarınızla yapacağınız 500 TL ve üzeri alışverişinize 50 TL, ...</a>
+      </div>
+    </div>
+    <h3 class="text-center mt-5">Otobüs Bileti için obilet.com!</h3>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -76,5 +96,25 @@ import cityComponent from "./cityComponent.vue";
   .main{
     background-image: none;
   }
+}
+h3{
+  color: rgb(91, 91, 91);
+}
+.t-company img{
+  width: 100%;
+  border-radius: 10px;
+}
+h4{
+  color: rgb(91, 91, 91);
+}
+.t-company{
+  box-shadow: 2px 2px 2px rgb(174, 174, 174) ;
+}
+.t-company a{
+  text-decoration: none;
+  color: rgb(87, 87, 87);
+  font-size: 18px;
+  padding-bottom: 10px;
+  
 }
 </style>
