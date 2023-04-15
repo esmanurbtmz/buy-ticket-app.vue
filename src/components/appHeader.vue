@@ -6,8 +6,8 @@
     <div class="container-fluid d-flex justify-content-around">
       <a class="navbar-brand" href="#"><h2><b>BiletAl.com</b></h2></a>
       <div class="menu">
-        <a class="pe-2" href="">Üye Girişi |</a>
-        <a class="pe-2" href="">Seyahatlerim |</a>
+        <router-link :to="{name:'LoginPage'}">Üye Girişi |</router-link>
+        <a class="pe-2" href=""> Seyahatlerim |</a>
         <a class="pe-2" href="">Yardım</a>
       </div>
       <button

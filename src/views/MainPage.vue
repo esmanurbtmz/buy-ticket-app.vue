@@ -55,13 +55,6 @@ import cityComponent from "./cityComponent.vue";
         <a href="">HSBC bireysel kredi kartlarınızla yapacağınız 500 TL ve üzeri alışverişinize 50 TL, ...</a>
       </div>
     </div>
-    <h3 class="text-center mt-5">Otobüs Bileti için obilet.com!</h3>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
   </div>
 </template>
 

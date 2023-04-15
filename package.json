@@ -11,7 +11,8 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.1"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
