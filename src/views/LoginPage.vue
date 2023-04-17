@@ -6,7 +6,7 @@
         <router-link class="close-btn" :to="{name:'MainPage'}"><i class="fa fa-times d-flex justify-content-end" aria-hidden="true"></i></router-link>
         <h2 class="text-center">Üye Girişi</h2>
         <button class="btn facebook-btn mt-3"><b>Facebook ile Giriş Yap</b></button>
-        <button class="btn google-btn mt-3">Google il Giriş Yap</button>
+        <button class="btn google-btn mt-3">Google ile Giriş Yap</button>
         <hr>
       <div class="form-floating mb-3">
         <input
@@ -27,11 +27,14 @@
         <label for="floatingPassword mb-">Password</label>
       </div>
       <div>
-        <a href=""><b>Şifrenizi mi Unnutunuz?</b></a>
+        <a href=""><b>Şifrenizi mi Unuttunuz?</b></a>
       </div>
       <button class="login-btn btn mt-3"><b>Giriş Yap</b></button>
       <p class="text-center mt-2"><b>Henüz üye değil misiniz</b></p>
-      <button class="btn register-btn"><b>Üye Ol</b></button>
+      <router-link class="route" :to="{name:'RegisterPage'}">
+        <button class="btn register-btn"><b>Üye Ol</b></button>
+      </router-link>
+      
     </div>
   </div>
 </template>
@@ -73,6 +76,7 @@ p{
     font-size: 13px;
 }
 .register-btn{
+  
     color: #d23b38;
     width: 100%;
     border: 1px solid #d23b38 ;
@@ -80,5 +84,8 @@ p{
 .close-btn{
     text-decoration: none;
     font-size: 20px;
+}
+.route{
+  text-decoration: none;
 }
 </style>
