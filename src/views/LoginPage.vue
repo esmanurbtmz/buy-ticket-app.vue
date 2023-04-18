@@ -1,4 +1,20 @@
-<script></script>
+<script>
+export default{
+  data(){
+    return{
+      userData:{
+        email:null,
+        password:null
+      }
+    }
+  },
+  methods:{
+    onSubmit(){
+      
+    }
+  }
+}
+</script>
 <template>
   <div class="d-flex justify-content-center align-items-center f-container">
     
@@ -9,7 +25,7 @@
         <button class="btn google-btn mt-3">Google ile Giriş Yap</button>
         <hr>
       <div class="form-floating mb-3">
-        <input
+        <input v-model="userData.email"
           type="email"
           class="form-control"
           id="floatingInput"
@@ -18,7 +34,7 @@
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating mb-2">
-        <input
+        <input v-model="userData.password"
           type="password"
           class="form-control"
           id="floatingPassword"
@@ -29,7 +45,7 @@
       <div>
         <a href=""><b>Şifrenizi mi Unuttunuz?</b></a>
       </div>
-      <button class="login-btn btn mt-3"><b>Giriş Yap</b></button>
+      <button @click="onSubmit" class="login-btn btn mt-3"><b>Giriş Yap</b></button>
       <p class="text-center mt-2"><b>Henüz üye değil misiniz</b></p>
       <router-link class="route" :to="{name:'RegisterPage'}">
         <button class="btn register-btn"><b>Üye Ol</b></button>
