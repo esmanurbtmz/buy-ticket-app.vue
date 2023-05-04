@@ -7,7 +7,6 @@ export default {
         email: null,
         password: null,
       },
-      isActive: true
     };
   },
   methods: {
@@ -27,7 +26,7 @@ export default {
         console.log("boş veri");
       }
     },
-  }
+  },
 };
 </script>
 <template>
@@ -45,32 +44,34 @@ export default {
       </button>
       <button class="btn google-btn mt-3"><b>Google ile Giriş Yap</b></button>
       <hr />
-      <div class="form-floating mb-3">
-        <input
-        required
-          v-model="userData.email"
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-          
-        />
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating mb-2">
-        <input
-          v-model="userData.password"
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-          required
-        />
-        <label for="floatingPassword mb-">Password</label>
-      </div>
-      <button :disabled="isActive" @click="onSave" class="btn register-btn">
-        <b>Üye Ol</b>
-      </button>
+      <form action="">
+        <div class="form-floating mb-3">
+          <input
+            required
+            v-model="userData.email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input
+            v-model="userData.password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            required
+          />
+          <label for="floatingPassword mb-">Password</label>
+        </div>
+        <button @click="onSave" class="btn register-btn">
+          <b>Üye Ol</b>
+        </button>
+      </form>
     </div>
   </div>
 </template>

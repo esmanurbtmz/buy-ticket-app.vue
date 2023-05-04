@@ -1,4 +1,5 @@
 <script>
+import CryptoJS from "crypto-js";
 export default{
   data(){
     return{
@@ -10,7 +11,14 @@ export default{
   },
   methods:{
     onSubmit(){
-      
+      const password = CryptoJS.HmacSHA1(
+          this.userData.password,
+          this.$store.getters._saltKey
+        ).toString();
+        this.$appAxios.get(`/users?username=${this.userData.email}&password=${password}`).then(login_res => {
+          console.log(login_res)
+        })
+        .catch(e=> console.log(e))
     }
   }
 }
@@ -22,7 +30,7 @@ export default{
         <router-link class="close-btn" :to="{name:'MainPage'}"><i class="fa fa-times d-flex justify-content-end" aria-hidden="true"></i></router-link>
         <h2 class="text-center">Üye Girişi</h2>
         <button class="btn facebook-btn mt-3"><b>Facebook ile Giriş Yap</b></button>
-        <button class="btn google-btn mt-3">Google ile Giriş Yap</button>
+        <button class="btn google-btn mt-3"><b>Google ile Giriş Yap</b></button>
         <hr>
       <div class="form-floating mb-3">
         <input v-model="userData.email"
