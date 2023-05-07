@@ -1,14 +1,23 @@
 <script>
+import {mapGetters} from "vuex"
+export default {
+  computed: {
+    ...mapGetters(["_isNotAuthenticated", "_isAuthenticated"]),
+  },
+};
 </script>
 
 <template>
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-around">
-      <a class="navbar-brand" href="#"><h2><b>BiletAl.com</b></h2></a>
+      <a class="navbar-brand" href="#"
+        ><h2><b>BiletAl.com</b></h2></a
+      >
       <div class="menu">
-        <router-link :to="{name:'LoginPage'}">Üye Girişi |</router-link>
+        <router-link v-if="_isNotAuthenticated" :to="{ name: 'LoginPage' }">Üye Girişi |</router-link>
         <a class="pe-2" href=""> Seyahatlerim |</a>
-        <a class="pe-2" href="">Yardım</a>
+        <a class="pe-2" href="">Yardım |</a>
+        <router-link v-if="_isAuthenticated" class="pe-2" :to="{name: 'AccountPage'}">Hesap Bilgileri</router-link>
       </div>
       <button
         class="navbar-toggler"
@@ -38,10 +47,16 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <router-link v-if="_isNotAuthenticated" :to="{name:'LoginPage'}" class="nav-link" href="#">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <b> Giriş Yap</b>
-              </a>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{name:'AccountPage'}" class="nav-link" href="#">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <b> Hesabım</b>
+              </router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
@@ -55,6 +70,7 @@
                 <b> Yardım</b>
               </a>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -63,30 +79,30 @@
 </template>
 
 <style>
-.navbar{
-    background-color: #d23b38;
+.navbar {
+  background-color: #d23b38;
 }
-.navbar-toggler{
-    background-color: white;
+.navbar-toggler {
+  background-color: white;
 }
 @media screen and (min-width: 480px) {
   .navbar-toggler {
     display: none;
   }
 }
-.menu a{
-    text-decoration: none;
-    color: white;
+.menu a {
+  text-decoration: none;
+  color: white;
 }
 @media screen and (max-width: 480px) {
   .menu {
     display: none;
   }
 }
-.navbar-brand{
-    color: white;
+.navbar-brand {
+  color: white;
 }
-.nav-link{
+.nav-link {
   color: black;
 }
 </style>

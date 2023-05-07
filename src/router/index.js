@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import store from "../store";
 const routes= [
     {
         name: "MainPage",
@@ -14,6 +15,11 @@ const routes= [
         name:"RegisterPage",
         path: "/register",
         component : () => import("../views/RegisterPage.vue")
+    },
+    {
+        name:"AccountPage",
+        path: "/account",
+        component : () => import("../views/AccountPage.vue")
     }
 ]
 
@@ -21,5 +27,7 @@ const router = createRouter({
     routes,
     history: createWebHashHistory()
 })
+
+// router.beforeEach()
 
 export default  router
