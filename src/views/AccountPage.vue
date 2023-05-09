@@ -1,55 +1,67 @@
 <script>
 import appHeader from "../components/appHeader.vue";
-import {mapGetters} from "vuex"
+import SideMenu from "../components/sideMenu.vue";
 export default {
-  components: { appHeader },
-  computed: {
-    ...mapGetters(["_isNotAuthenticated", "_isAuthenticated"]),
-  },
-  methods:{
-    onLogout(){
-        this.$store.commit("logoutUser")
-        this.$router.push({name:"LoginPage"})
-    }
-  }
+  components: { appHeader, SideMenu },
 };
 </script>
 <template>
   <div>
     <appHeader></appHeader>
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="side-menu col-lg-2 col-2 mt-5">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <router-link :to="{name:'Ticket'}">Seyahatlerim</router-link>
-          </li>
-          <li class="list-group-item">Alarmlarım</li>
-          <li class="list-group-item">Kullanıcı Bilgilerim</li>
-          <li class="list-group-item">Ödeme Bilgilerim</li>
-          <li class="list-group-item">Kayıtlı Yolcularım</li>
-          <li class="list-group-item">
-            <a @click="onLogout">Çıkış Yap</a>
-          </li>
-        </ul>
+    <div class="d-flex justify-content-center  align-items-center">
+      <side-menu class="me-2 "></side-menu>
+      <div class="account-info col-lg-3 ">
+        <h5 class="ms-5">Hesap Bilgilerim</h5>
+        <form action="">
+          <div class="mb-3 ms-5">
+            <label class="form-label"
+              >Ad</label
+            >
+            <input
+              type="text"
+              class="form-control a-form"
+              
+            />
+          </div>
+          <div class="mb-3 ms-5">
+            <label class="form-label"
+              >Soyad</label
+            >
+            <input
+              type="text"
+              class="form-control a-form"
+              
+            />
+          </div>
+          <div class="mb-3 ms-5">
+            <label class="form-label"
+              >T.C. Kimlik No</label
+            >
+            <input
+              type="text"
+              class="form-control a-form"
+              
+            />
+          </div>
+          <div class="mb-3 ms-5">
+            <label class="form-label"
+              >E-Mail</label
+            >
+            <input
+              type="email"
+              class="form-control a-form"
+              
+            />
+          </div>
+          <button class="btn btn-danger ms-5"><b>Bilgilerimi Güncelle</b></button>
+        </form>
       </div>
-      <div class="account-info col-lg-6 col-6">deneme</div>
     </div>
   </div>
 </template>
 <style>
-.side-menu{
-    border: solid 1px rgb(158, 158, 158);
+.a-form {
+  border: 1px solid rgb(158, 158, 158) !important; 
 }
-.side-menu ul li{
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-.side-menu ul li a{
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-.account-info {
-  background-color: blue;
-}
+
 </style>

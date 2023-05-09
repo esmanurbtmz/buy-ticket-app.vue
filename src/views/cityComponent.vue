@@ -33,7 +33,7 @@
         </select>
       </div>
       <div>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control city-form">
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   border: none;
   padding: 30px;
 }
-input{
+.city-form{
     border: none !important;
     padding: 30px !important;
 }

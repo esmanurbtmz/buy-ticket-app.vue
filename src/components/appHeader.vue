@@ -16,8 +16,8 @@ export default {
       <div class="menu">
         <router-link v-if="_isNotAuthenticated" :to="{ name: 'LoginPage' }">Üye Girişi |</router-link>
         <a class="pe-2" href=""> Seyahatlerim |</a>
-        <a class="pe-2" href="">Yardım |</a>
-        <router-link v-if="_isAuthenticated" class="pe-2" :to="{name: 'AccountPage'}">Hesap Bilgileri</router-link>
+        <a class="pe-2" href="">Yardım </a>
+        <router-link v-if="_isAuthenticated" class="pe-2" :to="{name: 'AccountPage'}">| Hesap Bilgileri</router-link>
       </div>
       <button
         class="navbar-toggler"
