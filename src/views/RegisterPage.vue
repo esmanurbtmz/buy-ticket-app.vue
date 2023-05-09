@@ -11,20 +11,32 @@ export default {
   },
   methods: {
     onSave() {
-      if (this.userData.email != null && this.userData.password != null) {
-        const password = CryptoJS.HmacSHA1(
-          this.userData.password,
-          this.$store.getters._saltKey
-        ).toString();
-        this.$appAxios
-          .post("/users", { ...this.userData, password })
-          .then((registered_user_response) => {
-            console.log("registered_user_response", registered_user_response);
-            this.$router.push({ name: "LoginPage" });
-          });
-      } else {
-        console.log("boş veri");
-      }
+      const password = CryptoJS.HmacSHA1(
+        this.userData.password,
+        this.$store.getters._saltKey
+      ).toString();
+      this.$appAxios
+        .get(`/users?username=${this.userData.email}&password=${password}`)
+        .then((login_res) => {
+          if (login_res.data.length > 0) {
+            alert("Kullanıcı zaten mevcut");
+          } else {
+            if (this.userData.email != null && this.userData.password != null) {
+              this.$appAxios
+                .post("/users", { ...this.userData, password })
+                .then((registered_user_response) => {
+                  console.log(
+                    "registered_user_response",
+                    registered_user_response
+                  );
+                  this.$router.push({ name: "LoginPage" });
+                });
+            } else {
+              console.log("boş veri");
+            }
+          }
+        })
+        .catch((e) => console.log(e));
     },
   },
 };
@@ -53,7 +65,6 @@ export default {
             class="form-control"
             id="floatingInput"
             placeholder="name@example.com"
-            
           />
           <label for="floatingInput">Email address</label>
         </div>
