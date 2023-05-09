@@ -1,39 +1,14 @@
 {
   "users": [
+    
+  ],
+  "userInfo": [
     {
-      "email": "e@hotmail.com",
-      "password": "aa5da4905e3c56a556835b112999efa9ae4a44db",
+      "name": "esma",
+      "surname": "uzun",
+      "identity": "11445562032",
+      "mail": "u@gmail.com",
       "id": 1
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "aa5da4905e3c56a556835b112999efa9ae4a44db",
-      "id": 2
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "09223137aaf3a8663fecea336252236e07aa9289",
-      "id": 3
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "86a5772742231fb8675487fe1615016f33367ff7",
-      "id": 4
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "ded12d291afd835ceda9e119ef10a0892fdf504e",
-      "id": 5
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "bbb7306e76ac22db981c6f8edb4039c552b7fc79",
-      "id": 6
-    },
-    {
-      "email": "e@hotmail.com",
-      "password": "98742b536da32a38d07317b65851d5e21856d70c",
-      "id": 7
     }
   ],
   "tickets": [],

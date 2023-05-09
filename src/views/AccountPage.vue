@@ -1,8 +1,27 @@
 <script>
 import appHeader from "../components/appHeader.vue";
 import SideMenu from "../components/sideMenu.vue";
+import CryptoJS from "crypto-js";
+
 export default {
   components: { appHeader, SideMenu },
+  data(){
+    return{
+      userInfo:{
+        name : null,
+        surname: null,
+        identity: null,
+        mail:null
+      }
+    }
+  },
+  methods:{
+    onSave(){
+      this.$appAxios.post("/userInfo",{...this.userInfo}).then(data_res=>{
+        console.log(data_res)
+      })
+    }
+  }
 };
 </script>
 <template>
@@ -20,6 +39,7 @@ export default {
             <input
               type="text"
               class="form-control a-form"
+              v-model="userInfo.name"
               
             />
           </div>
@@ -30,6 +50,7 @@ export default {
             <input
               type="text"
               class="form-control a-form"
+              v-model="userInfo.surname"
               
             />
           </div>
@@ -40,6 +61,7 @@ export default {
             <input
               type="text"
               class="form-control a-form"
+              v-model="userInfo.identity"
               
             />
           </div>
@@ -50,10 +72,11 @@ export default {
             <input
               type="email"
               class="form-control a-form"
+              v-model="userInfo.mail"
               
             />
           </div>
-          <button class="btn btn-danger ms-5"><b>Bilgilerimi Güncelle</b></button>
+          <button @click="onSave" class="btn btn-danger ms-5"><b>Bilgilerimi Güncelle</b></button>
         </form>
       </div>
     </div>
