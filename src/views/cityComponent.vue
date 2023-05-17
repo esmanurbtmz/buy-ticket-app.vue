@@ -35,6 +35,7 @@
       <div>
         <input type="date" class="form-control city-form">
       </div>
+      <button class="btn btn-success search"><b>Otobüs Bileti Bul</b></button>
     </div>
   </div>
 </template>
@@ -51,5 +52,10 @@
 .city-form{
     border: none !important;
     padding: 30px !important;
+}
+.search{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>
